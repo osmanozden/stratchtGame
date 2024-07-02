@@ -2,26 +2,19 @@ package com.example.scratchgame.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class BonusSymbol {
+public class StandardSymbol extends Symbol {
     @JsonProperty("reward_multiplier")
     private double rewardMultiplier;
 
-    @JsonProperty("impact")
-    private String impact;
-
-    @JsonProperty("extra")
-    private int extra;
-
+    @Override
     public double getRewardMultiplier() {
         return rewardMultiplier;
     }
 
     @Override
     public String toString() {
-        return "BonusSymbol{" +
+        return "StandardSymbol{" +
                 "rewardMultiplier=" + rewardMultiplier +
-                ", impact='" + impact + '\'' +
-                ", extra=" + extra +
                 '}';
     }
 }
