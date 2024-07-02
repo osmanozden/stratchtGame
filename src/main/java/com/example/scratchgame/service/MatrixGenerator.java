@@ -32,7 +32,6 @@ public class MatrixGenerator {
             }
         }
         System.out.println(random);
-        // Add bonus symbols based on their probabilities
         Map<String, BonusSymbol> bonusSymbols = config.getProbabilities().getBonusSymbols();
         for (Map.Entry<String, BonusSymbol> entry : bonusSymbols.entrySet()) {
             if (random.nextInt(100) < entry.getValue().getRewardMultiplier()) {

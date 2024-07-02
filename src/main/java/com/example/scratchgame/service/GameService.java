@@ -16,10 +16,9 @@ public class GameService {
 
     public double calculateReward(Symbol[][] matrix, double betAmount) {
         Map<String, List<String>> appliedWinningCombinations = new HashMap<>();
-        Symbol appliedBonusSymbol = null;
+        BonusSymbol appliedBonusSymbol = null;
         double reward = 0;
 
-        // Check for winning combinations
         for (Map.Entry<String, WinCombination> entry : config.getWinCombinations().entrySet()) {
             String combinationName = entry.getKey();
             WinCombination winCombination = entry.getValue();
@@ -38,14 +37,21 @@ public class GameService {
             }
         }
 
-        // Check for bonus symbols
         for (int row = 0; row < matrix.length; row++) {
             for (int column = 0; column < matrix[row].length; column++) {
                 Symbol symbol = matrix[row][column];
+                if (symbol.getType().equals("bonus")) {
+                    BonusSymbol bonusSymbol = (BonusSymbol) symbol;
+                    appliedBonusSymbol = bonusSymbol;
+                    if ("multiply_reward".equals(bonusSymbol.getRewardMultiplier())) {
+                        reward *= bonusSymbol.getRewardMultiplier();
+                    } else if ("extra_bonus".equals(bonusSymbol.getExtra())) {
+                        reward += bonusSymbol.getExtra();
+                    }
+                }
             }
         }
 
-        // Output results
         System.out.println("Matrix: " + Arrays.deepToString(matrix));
         System.out.println("Reward: " + reward);
         System.out.println("Applied Winning Combinations: " + appliedWinningCombinations);

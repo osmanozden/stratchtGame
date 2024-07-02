@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 )
 @JsonSubTypes({
         @JsonSubTypes.Type(value = StandardSymbol.class, name = "standard"),
+        @JsonSubTypes.Type(value = BonusSymbol.class, name = "bonus")
+
 })
 public abstract class Symbol {
     private String name;

@@ -6,7 +6,7 @@ public class StandardSymbol extends Symbol {
     @JsonProperty("reward_multiplier")
     private double rewardMultiplier;
 
-    @Override
+
     public double getRewardMultiplier() {
         return rewardMultiplier;
     }
