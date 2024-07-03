@@ -43,9 +43,9 @@ public class GameService {
                 if (symbol.getType().equals("bonus")) {
                     BonusSymbol bonusSymbol = (BonusSymbol) symbol;
                     appliedBonusSymbol = bonusSymbol;
-                    if ("multiply_reward".equals(bonusSymbol.getRewardMultiplier())) {
-                        reward *= bonusSymbol.getRewardMultiplier();
-                    } else if ("extra_bonus".equals(bonusSymbol.getExtra())) {
+                    if (bonusSymbol.getImpact().equals("multiply_reward")){
+                       reward *= bonusSymbol.getRewardMultiplier();
+                    } else if (bonusSymbol.getImpact().equals("extra_bonus")){
                         reward += bonusSymbol.getExtra();
                     }
                 }

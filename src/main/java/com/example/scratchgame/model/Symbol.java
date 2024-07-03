@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = StandardSymbol.class, name = "standard"),
         @JsonSubTypes.Type(value = BonusSymbol.class, name = "bonus")
-
 })
 public abstract class Symbol {
     private String name;
@@ -25,12 +24,4 @@ public abstract class Symbol {
         return type;
     }
     public abstract double getRewardMultiplier();
-
-    @Override
-    public String toString() {
-        return "Symbol{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                '}';
-    }
 }

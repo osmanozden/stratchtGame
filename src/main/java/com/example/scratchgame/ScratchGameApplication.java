@@ -45,6 +45,7 @@ public class ScratchGameApplication {
             System.out.println("Reward: " + reward);
         } catch (IOException e) {
             System.err.println("Error loading config file: " + e.getMessage());
+            e.printStackTrace();
             System.exit(1);
         } catch (Exception e) {
             System.err.println("An unexpected error occurred: " + e.getMessage());

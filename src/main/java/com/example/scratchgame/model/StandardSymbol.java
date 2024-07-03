@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class StandardSymbol extends Symbol {
     @JsonProperty("reward_multiplier")
     private double rewardMultiplier;
+    @JsonProperty("type")
+    private String type;
 
 
     public double getRewardMultiplier() {
@@ -16,5 +18,10 @@ public class StandardSymbol extends Symbol {
         return "StandardSymbol{" +
                 "rewardMultiplier=" + rewardMultiplier +
                 '}';
+    }
+
+    @Override
+    public String getType() {
+        return type;
     }
 }

@@ -163,12 +163,20 @@
       }
     ],
     "bonus_symbols": {
-      "symbols": {
-        "10x": 1,
-        "5x": 2,
-        "+1000": 3,
-        "+500": 4,
-        "MISS": 5
+      "10x": {
+        "probability": 1
+      },
+      "5x": {
+        "probability": 2
+      },
+      "+1000": {
+        "probability": 3
+      },
+      "+500": {
+        "probability": 4
+      },
+      "MISS": {
+        "probability": 5
       }
     }
   },

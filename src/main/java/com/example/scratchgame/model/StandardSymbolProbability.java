@@ -1,7 +1,10 @@
 package com.example.scratchgame.model;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import java.util.Map;
 
+@JsonTypeName("standard_symbols")
 public class StandardSymbolProbability {
     private int column;
     private int row;
