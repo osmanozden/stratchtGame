@@ -1,13 +1,9 @@
 package com.example.scratchgame.model;
 
 public class BonusSymbolProbability {
-    private int probability;
+    private int symbol;
 
-    public int getProbability() {
-        return probability;
-    }
-
-    public void setProbability(int probability) {
-        this.probability = probability;
+    public int getSymbol() {
+        return symbol;
     }
 }
